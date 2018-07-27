@@ -26,6 +26,43 @@ function headerImage()
     if ( height_diff > 0 ) {
         $aia( 'footer' ).css( 'margin-top', height_diff );
     }
+
+    $aia(".headroom").headroom({
+		"tolerance": 20,
+		"offset": 50,
+		"classes": {
+			"initial": "animated",
+			"pinned": "slideDown",
+			"unpinned": "slideUp"
+		}
+    });
+    
+    $aia(function() {
+        $aia('#carousel').carouFredSel({
+            width: '100%',
+            items: {
+                visible: 3,
+                start: -1
+            },
+            scroll: {
+                items: 1,
+                duration: 1000,
+                timeoutDuration: 3000
+            },
+            prev: '#prev',
+            next: '#next',
+            pagination: {
+                container: '#pager',
+                deviation: 1
+            }
+        });
+        $aia("#slider_next").click(function() {
+            $aia("#carousel").trigger("next", 1);
+        });
+        $aia("#slider_prev").click(function() {
+            $aia("#carousel").trigger("prev", 1);
+        });
+    });
 }
 
 

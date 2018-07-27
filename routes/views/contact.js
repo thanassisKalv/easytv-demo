@@ -1,6 +1,18 @@
 var keystone = require('keystone'),
 	Enquiry = keystone.list('Enquiry');
 
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+    host: 'mail.iti.gr',
+	port: 465,
+		auth: {
+		user: 'tkalv@iti.gr',
+		pass: 'okokok10'
+	  }
+});
+	
+
 exports = module.exports = function(req, res) {
 	
 	var view = new keystone.View(req, res),
@@ -18,8 +30,8 @@ exports = module.exports = function(req, res) {
 	};
 
 	// On POST requests, add the Enquiry item to the database
-	view.on('post', { action: 'contact' }, function(next) {
-		
+	view.on('post', { action: 'contact' }, function(next) 
+	{	
 		var newEnquiry = new Enquiry.model(),
 			updater = newEnquiry.getUpdateHandler(req);
 		
@@ -27,12 +39,31 @@ exports = module.exports = function(req, res) {
 			flashErrors: true,
 			fields: 'name, email, phone, enquiryType, message',
 			errorMessage: 'There was a problem submitting your enquiry:'
-		}, function(err) {
+		}, 
+		function(err) 
+		{
 			if (err) {
 				locals.validationErrors = err.errors;
 			} else {
 				locals.enquirySubmitted = true;
 			}
+
+			var mailOptions = {
+				from: 'EasyTV@messages.com',
+				to: 'thanassiskal@hotmail.com',
+				subject: 'Testing Nodemailer...',
+				text: 'That was easy!'
+			  };
+			  
+			  transporter.sendMail(mailOptions, function(error, info)
+			  {
+				if (error) {
+				  console.log(error);
+				} else {
+				  console.log('Email sent: ' + info.response);
+				}
+			  });
+
 			next();
 		});
 		
