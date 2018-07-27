@@ -1,0 +1,50 @@
+
+
+<div style="margin-top: 120px;" class="container">		
+		<div class="row">
+			
+			<!-- Article main content -->
+			<article class="col-md-8 maincontent">
+				<header class="page-header">
+					<h1 class="page-title">Consortium</h1>
+				</header>
+				
+				<br>
+				<br>
+				<ul class="list-unstyled">
+					{{# each data.partners.results}}
+					<li class="post" style='border-bottom: 1px dotted rgb(147, 161, 167)'>
+						<img src={{{image.url}}}>
+						<p>{{{content.brief}}}</p>
+					</li>
+					<br>
+					{{/each}}
+				</ul>
+
+			{{!-- <blockquote>"Bla bla bla and ...bla bla bla, that was good!."<br> - Unknown guy</blockquote> --}}
+			</article>
+			<!-- /Article -->
+			
+			<!-- Sidebar -->
+			<aside class="col-md-3 sidebar sidebar-right" style='right: -5%;'>
+				<h2>Latest News</h2>
+				<br>
+				<ul class="list-unstyled">
+					{{# each data.posts.results}}
+					<li class="post" style='border-top: 1px dotted rgb(134, 188, 211)'>
+						<h4><a href="{{postUrl slug}}">{{{title}}}</a></h4>
+						<p class="lead text-muted" style='font-size: 15px;'>on {{{date}}}
+						</p>
+					</li>
+					{{/each}}
+				</ul>
+
+
+			</aside>
+			<!-- /Sidebar -->
+
+		</div>
+	</div>	<!-- /container -->
+
+
+
