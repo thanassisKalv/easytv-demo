@@ -52,7 +52,7 @@ exports = module.exports = function(req, res) {
 				from: 'EasyTV@messages.com',
 				to: 'thanassiskal@hotmail.com',
 				subject: 'Testing Nodemailer...',
-				text: 'That was easy!'
+				text: 'This should be ok!'
 			  };
 			  
 			  transporter.sendMail(mailOptions, function(error, info)

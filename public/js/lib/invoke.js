@@ -8,6 +8,10 @@ function runMenu() {
 
 function headerImage() 
 {
+    var cw = $aia('.home').width();
+    $aia("#next").width((cw - 800)/2);
+    $aia("#prev").width((cw - 800)/2);
+
     if (document.location.pathname == '/commercial') {
         $aia('header#head-internal').css('background-image', 'url(/images/commercial.jpg)')
     }
@@ -62,6 +66,12 @@ function headerImage()
         $aia("#slider_prev").click(function() {
             $aia("#carousel").trigger("prev", 1);
         });
+    });
+
+    $aia(window).resize(function() {
+        var cw = $aia('.home').width();
+        $aia("#next").width((cw - 800)/2);
+        $aia("#prev").width((cw - 800)/2);
     });
 }
 

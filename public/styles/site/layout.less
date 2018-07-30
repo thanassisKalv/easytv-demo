@@ -161,7 +161,7 @@
 /* Highlights (in jumbotron in most cases) */
 .highlight { margin-top:40px; }
 	.h-caption { text-align: center; } 
-	.h-caption i { display:block; font-size: 54px; color:#382526; margin-bottom:36px; }
+	.h-caption i { display:block; font-size: 54px; color:#382526; margin-bottom:66px; }
 	.h-caption h4 { color:#382526; font-size: 16px; font-weight: bold; margin-bottom:20px; }
 	.h-body { }
 
@@ -307,14 +307,14 @@ a.profile:hover {
 	float: left;
 	padding:0px;
 	margin:0px;
-	border:none;
+	border: 1px solid rgb(216, 210, 210);
 	cursor:pointer;
 }
 #prev, #next {
 	background:url(/images/layer07.png) repeat;
 	display: block;
 	height: 550px;
-	width: 54%;
+	width: 30%;
 	top: 0;
 	position: absolute;
 }
@@ -323,17 +323,17 @@ a.profile:hover {
 	background:url(/images/layer08.png) repeat;
 }
 #prev {
-	left: -475px;
+	left: 0px;
 }
 #next {
-	right: -475px;
+	right: 0px;
 }
 #pager {
-	margin-left: -440px;
+	margin-left: 100px;
 	position: absolute;
 	left: 50%;
-	bottom: 10px;
-	z-index:3;
+	bottom: 60px;
+	z-index:33;
 }
 #pager a {
 	border: 2px solid #fff;
@@ -379,3 +379,11 @@ a.profile:hover {
 	z-index:3;
 
 }
+
+.truncate {
+
+    white-space: nowrap; 
+    height: 60px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }

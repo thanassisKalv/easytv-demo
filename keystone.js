@@ -9,7 +9,7 @@ var keystone = require('keystone'),
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
-// and documentation.
+// and documentation. hey...
 
 
 keystone.init({

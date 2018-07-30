@@ -13,7 +13,7 @@
 						<p class="lead text-muted" style='font-size: 15px;'>{{{categoryList categories prefix="Category: "}}}
 								on {{{date}}}
 						</p>
-						<p>{{{content.extended}}}</p>
+						<div class='truncate'>{{{content.brief}}}</div>
 						<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>
 					</li>
 					{{/each}}
